@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>LUMI BEAUTY — Вії • Брови • Нігті</title>
+
+  <meta
+    name="description"
+    content="LUMI BEAUTY — студія краси. Вії, брови та нігті. Онлайн-запис."
+  >
+
+  <style>
+    :root {
+      --cream: #f7f3ee;
+      --beige: #e9ddd2;
+      --brown: #2b2521;
+      --muted: #81756d;
+      --line: rgba(43, 37, 33, .14);
+      --white: #fff;
+      --accent: #b79b84;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cream);
+      color: var(--brown);
+      line-height: 1.6;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    /* ================= HEADER ================= */
+
+    header {
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(247, 243, 238, .9);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      max-width: 1280px;
+      margin: auto;
+      padding: 20px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: Georgia, serif;
+      font-size: 25px;
+      letter-spacing: 7px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+      font-size: 13px;
+    }
+
+    .nav-links a {
+      transition: opacity .3s;
+    }
+
+    .nav-links a:hover {
+      opacity: .55;
+    }
+
+    .nav-cta {
+      background: var(--brown);
+      color: white;
+      padding: 12px 23px;
+      border-radius: 100px;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+      min-height: 100vh;
+      padding: 140px 32px 70px;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-grid {
+      max-width: 1280px;
+      width: 100%;
+      margin: auto;
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-family: Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(60px, 8vw, 112px);
+      line-height: .9;
+      letter-spacing: -4px;
+      margin-bottom: 35px;
+    }
+
+    .hero h1 em {
+      color: var(--accent);
+      font-style: italic;
+    }
+
+    .hero-description {
+      max-width: 470px;
+      color: var(--muted);
+      font-size: 17px;
+      margin-bottom: 38px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 30px;
+      background: var(--brown);
+      color: white;
+      border-radius: 100px;
+      border: 1px solid var(--brown);
+      transition: .3s;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+      background: #403832;
+    }
+
+    .hero-photo {
+      height: 690px;
+      overflow: hidden;
+      border-radius: 280px 280px 18px 18px;
+    }
+
+    .hero-photo img {
+      height: 100%;
+      object-fit: cover;
+      transition: transform 1s ease;
+    }
+
+    .hero-photo:hover img {
+      transform: scale(1.04);
+    }
+
+    /* ================= INTRO ================= */
+
+    .intro {
+      background: var(--brown);
+      color: white;
+      padding: 100px 32px;
+    }
+
+    .intro-inner {
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .intro .eyebrow {
+      color: #bdb0a6;
+    }
+
+    .intro h2 {
+      font-family: Georgia, serif;
+      font-size: clamp(40px, 6vw, 72px);
+      font-weight: 400;
+      line-height: 1;
+      margin-bottom: 25px;
+    }
+
+    .intro p {
+      max-width: 650px;
+      margin: auto;
+      color: #cfc5bd;
+      font-size: 17px;
+    }
+
+    /* ================= SERVICES ================= */
+
+    section {
+      padding: 115px 32px;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: auto;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 55px;
+    }
+
+    .section-heading h2 {
+      font-family: Georgia, serif;
+      font-size: clamp(42px, 6vw, 70px);
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .section-heading p {
+      max-width: 350px;
+      color: var(--muted);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      background: #eee5dc;
+      padding: 42px 34px;
+      min-height: 390px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: .35s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      background: #e5d8cc;
+    }
+
+    .service-number {
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: var(--accent);
+    }
+
+    .service-card h3 {
+      font-family: Georgia, serif;
+      font-size: 36px;
+      font-weight: 400;
+      margin: 35px 0 12px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+
+    .service-items {
+      list-style: none;
+    }
+
+    .service-items li {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 14px;
+    }
+
+    /* ================= PRICES ================= */
+
+    .prices {
+      background: #fff;
+    }
+
+    .price-table {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .price-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 30px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .price-name {
+      font-family: Georgia, serif;
+      font-size: 22px;
+    }
+
+    .price-description {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 4px;
+    }
+
+    .price-value {
+      font-size: 17px;
+      white-space: nowrap;
+    }
+
+    /* ================= GALLERY ================= */
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1.3fr .7fr .9fr;
+      grid-template-rows: 270px 270px;
+      gap: 14px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    .gallery-item:first-child {
+      grid-row: span 2;
+    }
+
+    .gallery-item img {
+      height: 100%;
+      object-fit: cover;
+      transition: transform .6s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    /* ================= ABOUT ================= */
+
+    .about {
+      background: var(--beige);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-photo {
+      height: 620px;
+      overflow: hidden;
+      border-radius: 20px;
+    }
+
+    .about-photo img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-content h2 {
+      font-family: Georgia, serif;
+      font-size: clamp(44px, 6vw, 75px);
+      font-weight: 400;
+      line-height: 1;
+      margin-bottom: 30px;
+    }
+
+    .about-content p {
+      max-width: 500px;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    /* ================= REVIEWS ================= */
+
+    .reviews {
+      background: var(--brown);
+      color: white;
+    }
+
+    .reviews .eyebrow {
+      color: #bdb0a6;
+    }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .review {
+      border: 1px solid rgba(255,255,255,.15);
+      padding: 35px;
+      min-height: 270px;
+    }
+
+    .stars {
+      letter-spacing: 5px;
+      margin-bottom: 30px;
+      color: #d1b79e;
+    }
+
+    .review p {
+      color: #d7cec7;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      line-height: 1.4;
+      margin-bottom: 30px;
+    }
+
+    .review span {
+      color: #aaa09a;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    /* ================= BOOKING ================= */
+
+    .booking {
+      background: #e9ddd2;
+    }
+
+    .booking-box {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .booking-box h2 {
+      font-family: Georgia, serif;
+      font-size: clamp(45px, 7vw, 80px);
+      font-weight: 400;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .booking-box > p {
+      color: var(--muted);
+      margin-bottom: 40px;
+    }
+
+    .booking-form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .booking-form input,
+    .booking-form select,
+    .booking-form textarea {
+      width: 100%;
+      border: 1px solid #c8b9ad;
+      background: rgba(255,255,255,.55);
+      padding: 17px 18px;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    .booking-form input:focus,
+    .booking-form select:focus,
+    .booking-form textarea:focus {
+      border-color: var(--brown);
+    }
+
+    .booking-form textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .booking-form button {
+      border: 0;
+      cursor: pointer;
+      padding: 17px;
+      border-radius: 100px;
+      background: var(--brown);
+      color: white;
+      transition: .3s;
+    }
+
+    .booking-form button:hover {
+      transform: translateY(-2px);
+    }
+
+    .form-note {
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 12px;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      background: var(--brown);
+      color: white;
+      padding: 70px 32px 30px;
+    }
+
+    .footer-grid {
+      max-width: 1280px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+    }
+
+    .footer-logo {
+      font-family: Georgia, serif;
+      font-size: 30px;
+      letter-spacing: 7px;
+      margin-bottom: 15px;
+    }
+
+    footer h4 {
+      margin-bottom: 15px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #bdb0a6;
+    }
+
+    footer p,
+    footer a {
+      color: #cfc5bd;
+      font-size: 14px;
+    }
+
+    footer a {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .copyright {
+      max-width: 1280px;
+      margin: 60px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,.12);
+      color: #8d837c;
+      font-size: 12px;
+    }
+
+    /* ================= ANIMATION ================= */
+
+    .fade {
+      opacity: 0;
+      transform: translateY(25px);
+      animation: fadeUp .9s ease forwards;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media (max-width: 850px) {
+
+      .nav {
+        padding: 16px 20px;
+      }
+
+      .nav-links li:not(:last-child) {
+        display: none;
+      }
+
+      .hero {
+        padding: 120px 20px 60px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .hero h1 {
+        font-size: 65px;
+        letter-spacing: -2px;
+      }
+
+      .hero-photo {
+        height: 480px;
+        border-radius: 200px 200px 15px 15px;
+      }
+
+      section {
+        padding: 75px 20px;
+      }
+
+      .section-heading {
+        display: block;
+      }
+
+      .section-heading h2 {
+        margin-bottom: 20px;
+      }
+
+      .service-grid,
+      .review-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 300px 220px 220px;
+      }
+
+      .gallery-item:first-child {
+        grid-column: span 2;
+        grid-row: auto;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .about-photo {
+        height: 430px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#" class="logo">LUMI</a>
+
+    <ul class="nav-links">
+      <li><a href="#services">Послуги</a></li>
+      <li><a href="#prices">Ціни</a></li>
+      <li><a href="#works">Роботи</a></li>
+      <li><a href="#about">Про нас</a></li>
+      <li><a href="#booking" class="nav-cta">Записатися</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-grid">
+
+      <div class="fade">
+
+        <div class="eyebrow">
+          Beauty studio · Kyiv
+        </div>
+
+        <h1>
+          Твоя<br>
+          <em>краса.</em><br>
+          Твій стиль.
+        </h1>
+
+        <p class="hero-description">
+          Вії, брови та нігті в одному просторі.
+          Делікатний догляд, професійна робота
+          та образ, який подобається саме тобі.
+        </p>
+
+        <a href="#booking" class="button">
+          Записатися
+        </a>
+
+      </div>
+
+      <div class="hero-photo">
+        <img
+          src="https://images.unsplash.com/photo-1487412912498-0447578fcca8?auto=format&fit=crop&w=1200&q=85"
+          alt="Beauty studio"
+        >
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- INTRO -->
+
+  <section class="intro">
+
+    <div class="intro-inner">
+
+      <div class="eyebrow">
+        LUMI BEAUTY
+      </div>
+
+      <h2>
+        Краса починається<br>
+        з турботи про себе.
+      </h2>
+
+      <p>
+        Ми створили простір, де можна на годину
+        забути про справи, розслабитися та присвятити
+        час собі.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- SERVICES -->
+
+  <section id="services">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <div>
+          <div class="eyebrow">Наші напрямки</div>
+
+          <h2>
+            Beauty<br>
+            у деталях.
+          </h2>
+        </div>
+
+        <p>
+          Три основні напрямки, щоб створити
+          доглянутий образ без зайвого.
+        </p>
+
+      </div>
+
+
+      <div class="service-grid">
+
+        <article class="service-card">
+
+          <div class="service-number">01</div>
+
+          <div>
+            <h3>Вії</h3>
+
+            <p>
+              Виразний погляд та красиві,
+              доглянуті вії.
+            </p>
+
+            <ul class="service-items">
+              <li>
+                <span>Наращування</span>
+                <span>від 900 ₴</span>
+              </li>
+
+              <li>
+                <span>Ламінування</span>
+                <span>від 700 ₴</span>
+              </li>
+
+              <li>
+                <span>Фарбування</span>
+                <span>від 300 ₴</span>
+              </li>
+            </ul>
+          </div>
+
+        </article>
+
+
+        <article class="service-card">
+
+          <div class="service-number">02</div>
+
+          <div>
+            <h3>Брови</h3>
+
+            <p>
+              Форма та колір, які підкреслюють
+              природну красу обличчя.
+            </p>
+
+            <ul class="service-items">
+              <li>
+                <span>Корекція</span>
+                <span>від 300 ₴</span>
+              </li>
+
+              <li>
+                <span>Фарбування</span>
+                <span>від 350 ₴</span>
+              </li>
+
+              <li>
+                <span>Ламінування</span>
+                <span>від 600 ₴</span>
+              </li>
+            </ul>
+          </div>
+
+        </article>
+
+
+        <article class="service-card">
+
+          <div class="service-number">03</div>
+
+          <div>
+            <h3>Нігті</h3>
+
+            <p>
+              Акуратний манікюр та покриття
+              для завершеного образу.
+            </p>
+
+            <ul class="service-items">
+              <li>
+                <span>Манікюр</span>
+                <span>від 400 ₴</span>
+              </li>
+
+              <li>
+                <span>Гель-лак</span>
+                <span>від 650 ₴</span>
+              </li>
+
+              <li>
+                <span>Дизайн</span>
+                <span>від 100 ₴</span>
+              </li>
+            </ul>
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PRICES -->
+
+  <section class="prices" id="prices">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <div>
+          <div class="eyebrow">Прайс</div>
+
+          <h2>
+            Наші<br>
+            ціни.
+          </h2>
+        </div>
+
+      </div>
+
+
+      <div class="price-table">
+
+        <div class="price-row">
+          <div>
+            <div class="price-name">Наращування вій</div>
+            <div class="price-description">
+              Класика / 2D / 3D
+            </div>
+          </div>
+
+          <div class="price-value">від 900 ₴</div>
+        </div>
+
+        <div class="price-row">
+          <div>
+            <div class="price-name">Ламінування вій</div>
+            <div class="price-description">
+              Ламінування + догляд
+            </div>
+          </div>
+
+          <div class="price-value">від 700 ₴</div>
+        </div>
+
+        <div class="price-row">
+          <div>
+            <div class="price-name">Оформлення брів</div>
+            <div class="price-description">
+              Корекція + фарбування
+            </div>
+          </div>
+
+          <div class="price-value">від 500 ₴</div>
+        </div>
+
+        <div class="price-row">
+          <div>
+            <div class="price-name">Ламінування брів</div>
+            <div class="price-description">
+              Ламінування + оформлення
+            </div>
+          </div>
+
+          <div class="price-value">від 600 ₴</div>
+        </div>
+
+        <div class="price-row">
+          <div>
+            <div class="price-name">Манікюр + гель-лак</div>
+            <div class="price-description">
+              Манікюр + однотонне покриття
+            </div>
+          </div>
+
+          <div class="price-value">від 650 ₴</div>
+        </div>
+
+        <div class="price-row">
+          <div>
+            <div class="price-name">Дизайн нігтів</div>
+            <div class="price-description">
+              Ціна залежить від складності
+            </div>
+          </div>
+
+          <div class="price-value">від 100 ₴</div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- GALLERY -->
+
+  <section id="works">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <div>
+          <div class="eyebrow">Наші роботи</div>
+
+          <h2>
+            Деталі,<br>
+            які видно.
+          </h2>
+        </div>
+
+        <p>
+          Приклади робіт для натхнення.
+        </p>
+
+      </div>
+
+
+      <div class="gallery">
+
+        <div class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1583001931096-959e9a1a6223?auto=format&fit=crop&w=1000&q=85"
+            alt="Beauty work"
+          >
+        </div>
+
+        <div class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=800&q=85"
+            alt="Nails"
+          >
+        </div>
+
+        <div class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=85"
+            alt="Beauty"
+          >
+        </div>
+
+        <div class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=800&q=85"
+            alt="Beauty studio"
+          >
+        </div>
+
+        <div class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=800&q=85"
+            alt="Manicure"
+          >
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+
+  <section class="about" id="about">
+
+    <div class="container">
+
+      <div class="about-grid">
+
+        <div class="about-photo">
+
+          <img
+            src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=1000&q=85"
+            alt="Beauty studio"
+          >
+
+        </div>
+
+
+        <div class="about-content">
+
+          <div class="eyebrow">
+            Про LUMI
+          </div>
+
+          <h2>
+            Твій час.<br>
+            Твій простір.
+          </h2>
+
+          <p>
+            LUMI — невелика beauty-студія,
+            створена з любов'ю до красивих деталей.
+          </p>
+
+          <p>
+            Ми не прагнемо змінити тебе.
+            Наша задача — підкреслити те,
+            що вже є красивим.
+          </p>
+
+          <p>
+            Вії, брови та нігті — три напрямки,
+            на яких ми зосередили всю свою увагу.
+          </p>
+
+          <a href="#booking" class="button">
+            Записатися
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- REVIEWS -->
+
+  <section class="reviews">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <div>
+          <div class="eyebrow">Відгуки</div>
+
+          <h2>
+            Нас<br>
+            обирають.
+          </h2>
+        </div>
+
+      </div>
+
+
+      <div class="review-grid">
+
+        <article class="review">
+
+          <div class="stars">★★★★★</div>
+
+          <p>
+            «Дуже ніжна робота. Вії виглядають
+            натурально, саме так, як я хотіла.»
+          </p>
+
+          <span>Анна</span>
+
+        </article>
+
+
+        <article class="review">
+
+          <div class="stars">★★★★★</div>
+
+          <p>
+            «Нарешті знайшла майстра,
+            до якого хочеться повертатися.»
+          </p>
+
+          <span>Марія</span>
+
+        </article>
+
+
+        <article class="review">
+
+          <div class="stars">★★★★★</div>
+
+          <p>
+            «Дуже затишне місце і прекрасне
+            ставлення. Манікюр ідеальний.»
+          </p>
+
+          <span>Олена</span>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- BOOKING -->
+
+  <section class="booking" id="booking">
+
+    <div class="booking-box">
+
+      <div class="eyebrow">
+        Онлайн-запис
+      </div>
+
+      <h2>
+        Побачимося<br>
+        у LUMI?
+      </h2>
+
+      <p>
+        Залиш заявку — ми зв'яжемося з тобою
+        для підтвердження дати та часу.
+      </p>
+
+
+      <form
+        class="booking-form"
+        name="beauty-booking"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+      >
+
+        <input type="hidden" name="form-name" value="beauty-booking">
+
+        <p style="display:none;">
+          <label>
+            Не заповнюйте це поле:
+            <input name="bot-field">
+          </label>
+        </p>
+
+
+        <input
+          type="text"
+          name="name"
+          placeholder="Ваше ім'я"
+          required
+        >
+
+
+        <input
+          type="tel"
+          name="phone"
+          placeholder="Номер телефону"
+          required
+        >
+
+
+        <select name="service" required>
+
+          <option value="">
+            Оберіть послугу
+          </option>
+
+          <option>
+            Наращування вій
+          </option>
+
+          <option>
+            Ламінування вій
+          </option>
+
+          <option>
+            Фарбування вій
+          </option>
+
+          <option>
+            Корекція брів
+          </option>
+
+          <option>
+            Фарбування брів
+          </option>
+
+          <option>
+            Ламінування брів
+          </option>
+
+          <option>
+            Манікюр
+          </option>
+
+          <option>
+            Манікюр + гель-лак
+          </option>
+
+          <option>
+            Дизайн нігтів
+          </option>
+
+        </select>
+
+        <input
+        type="date"
+        name="date"
+        required
+      >
+      
+      <select name="time" required>
+        <option value="">Оберіть час</option>
+        <option>10:00</option>
+        <option>11:00</option>
+        <option>12:00</option>
+        <option>13:00</option>
+        <option>14:00</option>
+        <option>15:00</option>
+        <option>16:00</option>
+        <option>17:00</option>
+        <option>18:00</option>
+        <option>19:00</option>
+      </select>
+
+        <textarea
+          name="message"
+          placeholder="Коментар або побажання"
+        ></textarea>
+
+
+        <button type="submit">
+          Надіслати заявку →
+        </button>
+
+      </form>
+
+
+      <div class="form-note">
+        Натискаючи кнопку, ви погоджуєтесь
+        на обробку даних для зв'язку щодо запису.
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="footer-grid">
+
+    <div>
+      <div class="footer-logo">LUMI</div>
+
+      <p>
+        Beauty studio<br>
+        Вії · Брови · Нігті
+      </p>
+    </div>
+
+
+    <div>
+
+      <h4>Навігація</h4>
+
+      <a href="#services">Послуги</a>
+      <a href="#prices">Ціни</a>
+      <a href="#works">Роботи</a>
+      <a href="#booking">Записатися</a>
+
+    </div>
+
+
+    <div>
+
+      <h4>Контакти</h4>
+
+      <a href="tel:+380000000000">
+        +38 (000) 000-00-00
+      </a>
+
+      <a href="mailto:hello@lumibeauty.com">
+        hello@lumibeauty.com
+      </a>
+
+      <a href="#">
+        Instagram
+      </a>
+
+      <p>
+        Київ · Україна
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="copyright">
+    © 2026 LUMI BEAUTY
+  </div>
+
+</footer>
+
+</body>
+</html>
